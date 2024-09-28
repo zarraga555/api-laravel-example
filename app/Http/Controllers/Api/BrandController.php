@@ -89,19 +89,19 @@ class BrandController extends Controller
         }
 
         try {
-            $user = User::findOrFail($id);  // Busca el usuario, si no lo encuentra lanza una excepción
+            $brand = Brand::findOrFail($id);  // Busca el usuario, si no lo encuentra lanza una excepción
 
 //            Actualizacion de datos
-            $user->update([
-                'name'      => $request->name ?? $user->name,
-                'email'     => $request->email ?? $user->email,
-                'password'  => $request->password ? Hash::make($request->password) : $user->password,
+            $brand->update([
+                'name'      => $request->name ?? $brand->name,
+                'email'     => $request->email ?? $brand->email,
+                'created_by'    => $request->created_by ?? $brand->created_by,
             ]);
-            return ApiResponse::success($user, "Usuario actualizado correctamente");
+            return ApiResponse::success($brand, "Marca actualizado correctamente");
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
-            return ApiResponse::error("Usuario no encontrado", null, 404);
+            return ApiResponse::error("Marca no encontrado", null, 404);
         } catch (\Exception $exception) {
-            return ApiResponse::error("Error al actualizar el usuario", null, 500);
+            return ApiResponse::error("Error al actualizar la marca", null, 500);
         }
     }
 
