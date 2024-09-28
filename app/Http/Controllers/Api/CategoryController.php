@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //      Obtener lista de las marcas
+        //      Obtener lista de las categorias
         try {
             $categories = Brand::all();
             return ApiResponse::success($categories, "Marcas listados correctamente");
