@@ -22,3 +22,12 @@ use Illuminate\Support\Facades\Route;
     Route::delete('/brand/{id}', [BrandController::class, 'destroy'])->name('api.delete.brand');
 
 //});
+
+//Route::middleware('auth:sanctum')->group(function () {
+Route::get('/category', [BrandController::class, 'index']);
+Route::post('/category', [BrandController::class, 'store'])->name('api.store.category');
+Route::get('/category/{id}', [BrandController::class, 'show'])->name('api.show.category');
+Route::put('/category/{id}', [BrandController::class, 'update'])->name('api.update.category');
+Route::delete('/category/{id}', [BrandController::class, 'destroy'])->name('api.delete.category');
+
+//});
