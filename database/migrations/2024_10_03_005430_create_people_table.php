@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('state')->nullable();
             $table->string('city')->nullable();
             $table->string('postal_code')->nullable();
-            $table->decimal('credit_limit',22,2)->nullable();
+            $table->decimal('credit_limit',22,2)->nullable()->default(0.00);
             $table->foreignId('created_by')->nullable()->constrained('users');
             $table->timestamps();
             $table->softDeletes();
