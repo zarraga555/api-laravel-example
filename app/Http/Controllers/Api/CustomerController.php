@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\ApiResponse;
-use App\Models\Brand;
-use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Person;
 use Illuminate\Http\Request;
