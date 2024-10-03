@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\UnitMeasureController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\CustomerController;
+use App\Http\Controllers\Api\SupplierController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -60,5 +61,14 @@ Route::post('/customer', [CustomerController::class, 'store'])->name('api.store.
 Route::get('/customer/{id}', [CustomerController::class, 'show'])->name('api.show.customer');
 Route::put('/customer/{id}', [CustomerController::class, 'update'])->name('api.update.customer');
 Route::delete('/customer/{id}', [CustomerController::class, 'destroy'])->name('api.delete.customer');
+
+//});
+
+//Route::middleware('auth:sanctum')->group(function () {
+Route::get('/supplier', [SupplierController::class, 'index']);
+Route::post('/supplier', [SupplierController::class, 'store'])->name('api.store.supplier');
+Route::get('/supplier/{id}', [SupplierController::class, 'show'])->name('api.show.supplier');
+Route::put('/supplier/{id}', [SupplierController::class, 'update'])->name('api.update.supplier');
+Route::delete('/supplier/{id}', [SupplierController::class, 'destroy'])->name('api.delete.supplier');
 
 //});
