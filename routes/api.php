@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\BrandController;
 use App\Http\Controllers\Api\UnitMeasureController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\CustomerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -50,5 +51,14 @@ Route::post('/product', [ProductController::class, 'store'])->name('api.store.pr
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('api.show.product');
 Route::put('/product/{id}', [ProductController::class, 'update'])->name('api.update.product');
 Route::delete('/product/{id}', [ProductController::class, 'destroy'])->name('api.delete.product');
+
+//});
+
+//Route::middleware('auth:sanctum')->group(function () {
+Route::get('/customer', [CustomerController::class, 'index']);
+Route::post('/customer', [CustomerController::class, 'store'])->name('api.store.customer');
+Route::get('/customer/{id}', [CustomerController::class, 'show'])->name('api.show.customer');
+Route::put('/customer/{id}', [CustomerController::class, 'update'])->name('api.update.customer');
+Route::delete('/customer/{id}', [CustomerController::class, 'destroy'])->name('api.delete.customer');
 
 //});
