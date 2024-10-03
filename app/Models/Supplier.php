@@ -19,4 +19,8 @@ class Supplier extends Model
         'supplier_contact_email',
         'created_by'
     ];
+    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
 }

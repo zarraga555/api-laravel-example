@@ -17,4 +17,8 @@ class Customer extends Model
         'lastname',
         'created_by'
     ];
+    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
 }

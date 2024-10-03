@@ -16,4 +16,8 @@ class UnitOfMeasure extends Model
         'created_by',
         'description'
     ];
+    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
 }

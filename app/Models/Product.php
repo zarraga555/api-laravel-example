@@ -25,4 +25,20 @@ class Product extends Model
         'sale_price',
         'created_by'
     ];
+    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+    public function units(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(UnitOfMeasure::class, 'unit_id');
+    }
+    public function brands(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Brand::class, 'brand_id');
+    }
+    public function categories(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
 }

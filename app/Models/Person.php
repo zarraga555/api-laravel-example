@@ -25,4 +25,16 @@ class Person extends Model
         'credit_limit',
         'created_by'
     ];
+    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+    public function suppliers(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Supplier::class, 'suppliers_id');
+    }
+    public function customers(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Customer::class, 'customer_id');
+    }
 }
