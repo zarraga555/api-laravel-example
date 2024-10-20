@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('created_by')->nullable()->constrained('users');
-            $table->string('acronym')->nullable()->after('created_by');
-            $table->string('description')->nullable()->after('created_by');
+            $table->string('acronym')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

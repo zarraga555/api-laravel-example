@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('sku')->unique();
-            $table->foreignId('unit_id')->nullable()->constrained('units');
+            $table->foreignId('unit_id')->nullable()->constrained('unit_of_measures');
             $table->foreignId('brand_id')->nullable()->constrained('brands');
             $table->foreignId('category_id')->nullable()->constrained('categories');
 //            $table->foreignId('branch_offices_id')->nullable()->constrained('branch_offices');
